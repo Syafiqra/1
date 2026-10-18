@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Syafiq Rahman Alif - Portfolio</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -20,7 +16,6 @@
             overflow-x: hidden;
         }
 
-        /* Floating particles background */
         .particle {
             position: fixed;
             background: rgba(255, 255, 255, 0.1);
@@ -36,411 +31,201 @@
             75% { transform: translateY(-100px) translateX(100px); }
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            position: relative;
-            z-index: 1;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 1; }
 
-        /* Scroll progress bar */
         .progress-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 4px;
+            position: fixed; top: 0; left: 0; height: 4px;
             background: linear-gradient(90deg, #1e3c72, #2a5298);
-            z-index: 1000;
-            transition: width 0.3s ease;
+            z-index: 1000; transition: width 0.3s ease;
         }
 
         header {
-            text-align: center;
-            padding: 60px 20px;
-            color: white;
-            opacity: 0;
-            animation: fadeInDown 1s ease-in forwards;
+            text-align: center; padding: 60px 20px; color: white;
+            opacity: 0; animation: fadeInDown 1s ease-in forwards;
         }
 
         @keyframes fadeInDown {
-            from { 
-                opacity: 0; 
-                transform: translateY(-50px);
-            }
-            to { 
-                opacity: 1; 
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 5px solid white;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 60px;
-            color: white;
-            margin-left: auto;
-            margin-right: auto;
+            width: 170px; height: 170px; border-radius: 50%;
+            border: 5px solid white; margin: 0 auto 20px;
+            overflow: hidden; background: #1e3c72;
             box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-            transition: transform 0.5s ease;
-            cursor: pointer;
+            transition: transform 0.5s ease; cursor: pointer;
         }
+        .profile-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .profile-img:hover { transform: scale(1.1) rotate(5deg); }
 
-        .profile-img:hover {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .subtitle {
-            font-size: 1.2em;
-            opacity: 0.95;
-            margin-bottom: 10px;
-        }
-
-        .location {
-            font-size: 0.95em;
-            opacity: 0.85;
-        }
+        h1 { font-size: 2.5em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .subtitle { font-size: 1.2em; opacity: 0.95; margin-bottom: 10px; min-height: 1.6em; }
+        .location { font-size: 0.95em; opacity: 0.85; }
 
         .typing-text {
-            display: inline-block;
-            border-right: 2px solid white;
-            padding-right: 5px;
-            animation: blink 0.7s infinite;
+            display: inline-block; border-right: 2px solid white;
+            padding-right: 5px; animation: blink 0.7s infinite;
         }
+        @keyframes blink { 50% { border-color: transparent; } }
 
-        @keyframes blink {
-            50% { border-color: transparent; }
-        }
-
-        .social-links {
-            margin-top: 20px;
-        }
-
+        .social-links { margin-top: 20px; }
         .social-links a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.1em;
-            transition: all 0.3s;
-            display: inline-block;
-            padding: 8px 16px;
-            border-radius: 5px;
-            background: rgba(255,255,255,0.1);
-            opacity: 0;
-            animation: fadeInUp 0.6s ease-in forwards;
+            color: white; text-decoration: none; margin: 6px 8px; font-size: 1.1em;
+            transition: all 0.3s; display: inline-block; padding: 8px 16px;
+            border-radius: 5px; background: rgba(255,255,255,0.1);
+            opacity: 0; animation: fadeInUp 0.6s ease-in forwards;
         }
-
         .social-links a:nth-child(1) { animation-delay: 0.2s; }
         .social-links a:nth-child(2) { animation-delay: 0.4s; }
         .social-links a:nth-child(3) { animation-delay: 0.6s; }
         .social-links a:nth-child(4) { animation-delay: 0.8s; }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .social-links a:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,0.25);
+            transform: translateY(-5px); background: rgba(255,255,255,0.25);
             box-shadow: 0 5px 15px rgba(255,255,255,0.3);
         }
 
         .content {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            margin-top: -30px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+            background: white; border-radius: 20px; padding: 40px;
+            margin-top: -30px; box-shadow: 0 10px 40px rgba(0,0,0,0.25);
         }
 
-        .section {
-            margin-bottom: 50px;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .section { margin-bottom: 50px; opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+        .section.visible { opacity: 1; transform: translateY(0); }
 
         .section h2 {
-            color: #1e3c72;
-            margin-bottom: 30px;
-            font-size: 2em;
-            border-bottom: 3px solid #2a5298;
-            padding-bottom: 10px;
-            position: relative;
-            overflow: hidden;
+            color: #1e3c72; margin-bottom: 30px; font-size: 2em;
+            border-bottom: 3px solid #2a5298; padding-bottom: 10px;
+            position: relative; overflow: hidden;
         }
-
         .section h2::after {
-            content: '';
-            position: absolute;
-            bottom: -3px;
-            left: -100%;
-            width: 100%;
-            height: 3px;
+            content: ''; position: absolute; bottom: -3px; left: -100%;
+            width: 100%; height: 3px;
             background: linear-gradient(90deg, #1e3c72, #2a5298);
             transition: left 0.6s ease;
         }
-
-        .section.visible h2::after {
-            left: 0;
-        }
+        .section.visible h2::after { left: 0; }
 
         .about-text {
             background: linear-gradient(135deg, #f0f4f8 0%, #d9e7f5 100%);
-            padding: 25px;
-            border-radius: 10px;
-            border-left: 4px solid #2a5298;
-            font-size: 1.1em;
-            line-height: 1.8;
+            padding: 25px; border-radius: 10px; border-left: 4px solid #2a5298;
+            font-size: 1.1em; line-height: 1.8; text-align: justify;
         }
 
         .experience-item {
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            border-left: 4px solid #2a5298;
-            transition: all 0.3s;
-            cursor: pointer;
-            opacity: 0;
-            transform: translateX(-30px);
+            background: #f8f9fa; padding: 25px; border-radius: 10px;
+            margin-bottom: 20px; border-left: 4px solid #2a5298;
+            transition: all 0.3s; cursor: pointer;
+            opacity: 0; transform: translateX(-30px);
         }
-
-        .experience-item.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
+        .experience-item.visible { opacity: 1; transform: translateX(0); }
         .experience-item:hover {
             box-shadow: 0 8px 20px rgba(30,60,114,0.2);
-            transform: translateX(10px) !important;
-            border-left-width: 8px;
+            transform: translateX(10px) !important; border-left-width: 8px;
         }
 
         .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 10px;
-            flex-wrap: wrap;
+            display: flex; justify-content: space-between; align-items: start;
+            margin-bottom: 10px; flex-wrap: wrap; gap: 8px;
         }
-
-        .experience-title {
-            color: #1e3c72;
-            font-size: 1.3em;
-            font-weight: bold;
-        }
-
-        .experience-company {
-            color: #2a5298;
-            font-size: 1.1em;
-            margin-bottom: 5px;
-        }
-
+        .experience-title { color: #1e3c72; font-size: 1.3em; font-weight: bold; }
+        .experience-company { color: #2a5298; font-size: 1.1em; margin-bottom: 5px; }
         .experience-date {
-            color: #666;
-            font-size: 0.9em;
-            background: rgba(30,60,114,0.1);
-            padding: 4px 12px;
-            border-radius: 15px;
+            color: #666; font-size: 0.9em; background: rgba(30,60,114,0.1);
+            padding: 4px 12px; border-radius: 15px;
         }
+        .experience-item ul { margin-left: 20px; margin-top: 10px; }
+        .experience-item li { margin-bottom: 8px; color: #555; transition: color 0.3s; }
+        .experience-item:hover li { color: #1e3c72; }
 
-        .experience-item ul {
-            margin-left: 20px;
-            margin-top: 10px;
-        }
-
-        .experience-item li {
-            margin-bottom: 8px;
-            color: #555;
-            transition: color 0.3s;
-        }
-
-        .experience-item:hover li {
-            color: #1e3c72;
-        }
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
+        .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
 
         .project-card {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-radius: 10px;
-            padding: 25px;
-            transition: all 0.4s;
-            border: 2px solid transparent;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            opacity: 0;
-            transform: translateY(30px);
+            border-radius: 10px; padding: 25px; transition: all 0.4s;
+            border: 2px solid transparent; cursor: pointer; position: relative;
+            overflow: hidden; opacity: 0; transform: translateY(30px);
         }
-
-        .project-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
+        .project-card.visible { opacity: 1; transform: translateY(0); }
         .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
+            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
             background: linear-gradient(90deg, transparent, rgba(42,82,152,0.1), transparent);
             transition: left 0.5s;
         }
-
-        .project-card:hover::before {
-            left: 100%;
-        }
-
+        .project-card:hover::before { left: 100%; }
         .project-card:hover {
-            border-color: #2a5298;
-            box-shadow: 0 12px 30px rgba(30,60,114,0.25);
+            border-color: #2a5298; box-shadow: 0 12px 30px rgba(30,60,114,0.25);
             transform: translateY(-10px) scale(1.02) !important;
         }
-
-        .project-card h3 {
-            color: #1e3c72;
-            margin-bottom: 10px;
-            font-size: 1.3em;
-        }
-
+        .project-card h3 { color: #1e3c72; margin-bottom: 6px; font-size: 1.3em; }
+        .project-type { color: #2a5298; font-size: 0.95em; font-style: italic; margin-bottom: 10px; }
         .project-year {
-            display: inline-block;
-            background: #2a5298;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 15px;
-            font-size: 0.85em;
-            margin-bottom: 15px;
-            transition: all 0.3s;
+            display: inline-block; background: #2a5298; color: white;
+            padding: 4px 12px; border-radius: 15px; font-size: 0.85em;
+            margin-bottom: 12px; transition: all 0.3s;
         }
+        .project-card:hover .project-year { transform: scale(1.1); background: #1e3c72; }
+        .project-card p { color: #555; line-height: 1.7; }
+        .project-card ul { margin-left: 18px; color: #555; line-height: 1.7; }
+        .project-card li { margin-bottom: 6px; }
 
-        .project-card:hover .project-year {
-            transform: scale(1.1);
-            background: #1e3c72;
+        .skill-group { margin-bottom: 22px; }
+        .skill-group h3 { color: #1e3c72; font-size: 1.15em; margin-bottom: 10px; }
+        .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .tag {
+            background: rgba(30,60,114,0.08); color: #1e3c72; border: 1px solid rgba(42,82,152,0.35);
+            padding: 5px 14px; border-radius: 15px; font-size: 0.92em; transition: all 0.3s;
         }
+        .tag:hover { background: #2a5298; color: white; transform: translateY(-3px); }
+        .tag.learning { border-style: dashed; }
 
-        .project-card p {
-            color: #555;
-            line-height: 1.7;
-        }
-
-        /* Scroll to top button */
         .scroll-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            font-size: 24px;
-            cursor: pointer;
-            opacity: 0;
-            transform: translateY(100px);
-            transition: all 0.3s;
-            z-index: 1000;
+            position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px;
+            background: linear-gradient(135deg, #1e3c72, #2a5298); color: white;
+            border: none; border-radius: 50%; font-size: 24px; cursor: pointer;
+            opacity: 0; transform: translateY(100px); transition: all 0.3s; z-index: 1000;
             box-shadow: 0 4px 10px rgba(30,60,114,0.4);
         }
+        .scroll-top.visible { opacity: 1; transform: translateY(0); }
+        .scroll-top:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(30,60,114,0.6); }
 
-        .scroll-top.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        footer { text-align: center; padding: 30px; color: white; margin-top: 40px; }
 
-        .scroll-top:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(30,60,114,0.6);
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: white;
-            margin-top: 40px;
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
         }
 
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2em;
-            }
-            
-            .content {
-                padding: 20px;
-            }
-
-            .experience-header {
-                flex-direction: column;
-            }
-
-            .projects {
-                grid-template-columns: 1fr;
-            }
-
-            .scroll-top {
-                bottom: 20px;
-                right: 20px;
-                width: 45px;
-                height: 45px;
-            }
+            h1 { font-size: 2em; }
+            .content { padding: 20px; }
+            .experience-header { flex-direction: column; }
+            .projects { grid-template-columns: 1fr; }
+            .scroll-top { bottom: 20px; right: 20px; width: 45px; height: 45px; }
         }
     </style>
 </head>
 <body>
-    <!-- Particles Background -->
     <div id="particles"></div>
-
-    <!-- Progress Bar -->
     <div class="progress-bar" id="progressBar"></div>
-
-    <!-- Scroll to Top Button -->
-    <button class="scroll-top" id="scrollTop">↑</button>
+    <button class="scroll-top" id="scrollTop" aria-label="Kembali ke atas">↑</button>
 
     <div class="container">
         <header>
-            <div class="profile-img">SR</div>
+            <div class="profile-img"><img src="data:image/jpeg;base64,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" alt="Foto Syafiq Rahman Alif"></div>
             <h1>Syafiq Rahman Alif</h1>
             <p class="subtitle"><span class="typing-text" id="typingText"></span></p>
             <p class="location">📍 Buduran, Sidoarjo, Jawa Timur</p>
             <div class="social-links">
-                <a href="https://github.com/syafiqra" target="_blank">🔗 GitHub</a>
+                <a href="https://github.com/syafiqra" target="_blank" rel="noopener">🔗 GitHub</a>
                 <a href="mailto:syafiqr766@gmail.com">📧 Email</a>
-                <a href="https://www.linkedin.com/in/syafiqrahmanalif" target="_blank">💼 LinkedIn</a>
-                <a href="https://wa.me/081913966933">📱 WhatsApp</a>
+                <a href="https://www.linkedin.com/in/syafiqrahmanalif" target="_blank" rel="noopener">💼 LinkedIn</a>
+                <a href="https://wa.me/6281913966933" target="_blank" rel="noopener">📱 WhatsApp</a>
             </div>
         </header>
 
@@ -448,37 +233,236 @@
             <section class="section">
                 <h2>Tentang Saya</h2>
                 <div class="about-text">
-                    <p>Mahasiswa D4 Teknik Elektro Otomasi ITS yang terbiasa mengerjakan proyek berbasis praktik dan tim. Aktif belajar, adaptif, dan siap berkontribusi dalam lingkungan kerja teknis maupun organisasi. Memiliki pengalaman magang di PT. Angkasa Pura dan aktif dalam berbagai kepanitiaan kampus.</p>
+                    <p>Mahasiswa D4 Teknik Elektro Otomasi ITS (IPK 3,47/4,00) yang gemar mengubah ide menjadi sistem otomasi nyata, mulai dari memprogram PLC Omron untuk pengering kopi berbasis IoT hingga merancang PCB dengan KiCad, sekaligus aktif sebagai Asisten Laboratorium Microelectronics &amp; Embedded System. Pernah terjun langsung ke lingkungan kerja nyata di PT Angkasa Pura Indonesia (Bandara Juanda) untuk mempelajari cara kerja sistem jaringan bandara, dan mengasah dasar kelistrikan di tim robotika ICHIRO ITS. Bersertifikasi BNSP di bidang jaringan komputer (TKJ) dan pengembangan web (Junior Web Developer), terbiasa bekerja lintas divisi, dan siap berkontribusi sebagai <strong>Automation &amp; Instrumentation Intern</strong>.</p>
                 </div>
             </section>
 
             <section class="section">
-                <h2>Pengalaman Kerja</h2>
+                <h2>Pendidikan</h2>
                 <div class="experience-item">
                     <div class="experience-header">
                         <div>
-                            <div class="experience-title">Teknisi - Airport Technology Network Operating System</div>
-                            <div class="experience-company">PT. Angkasa Pura</div>
+                            <div class="experience-title">D4 Teknik Elektro Otomasi</div>
+                            <div class="experience-company">Institut Teknologi Sepuluh Nopember (ITS), Surabaya</div>
+                        </div>
+                        <div class="experience-date">2024 - Sekarang</div>
+                    </div>
+                    <ul><li>IPK 3,47/4,00</li></ul>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Teknik Komputer dan Jaringan (TKJ)</div>
+                            <div class="experience-company">SMKN 3 Buduran, Sidoarjo</div>
+                        </div>
+                        <div class="experience-date">2021 - 2024</div>
+                    </div>
+                    <ul><li>Nilai rata-rata 88,3/100</li></ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Pengalaman Kerja &amp; Laboratorium</h2>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Asisten Laboratorium</div>
+                            <div class="experience-company">Laboratorium Microelectronics &amp; Embedded System - ITS Surabaya</div>
+                        </div>
+                        <div class="experience-date">Jan 2026 - Sekarang</div>
+                    </div>
+                    <ul>
+                        <li>Membantu teknisi mengelola inventaris, perawatan berkala perangkat, serta pengadaan komponen elektronik</li>
+                        <li>Menjadi mentor praktikum dan pembimbing Project-Based Learning (PjBL) mahasiswa semester 1 dan 3 pada bidang elektronika dasar dan embedded system</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Staff Electrical (Magang, 1 bulan)</div>
+                            <div class="experience-company">Tim Robotika ICHIRO - ITS Surabaya</div>
+                        </div>
+                        <div class="experience-date">Okt 2024</div>
+                    </div>
+                    <ul>
+                        <li>Mempelajari dan mengimplementasikan basic electronics, perakitan rangkaian, serta pengujian komponen elektrikal robot</li>
+                        <li>Dilatih merancang PCB menggunakan KiCad</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Teknisi Magang - Airport Technology Network Operating System (ATNOS)</div>
+                            <div class="experience-company">PT Angkasa Pura Indonesia - Bandara Juanda</div>
                         </div>
                         <div class="experience-date">Jan 2023 - Apr 2023</div>
                     </div>
                     <ul>
-                        <li>Troubleshooting perangkat elektronik dan jaringan ketika terjadi gangguan operasional untuk memastikan sistem tetap berjalan optimal</li>
-                        <li>Membantu pengelolaan dan manajemen data sistem operasional bandara</li>
-                        <li>Berpartisipasi dalam monitoring sistem teknologi dan jaringan bandara</li>
+                        <li>Melakukan maintenance perangkat dan sistem jaringan pendukung operasional bandara</li>
+                        <li>Mengamati proses troubleshooting dan mempelajari cara kerja seluruh sistem jaringan di Bandara Internasional Juanda</li>
                     </ul>
                 </div>
             </section>
 
             <section class="section">
-                <h2>Pengalaman Organisasi</h2>
+                <h2>Proyek</h2>
+                <div class="projects">
+                    <div class="project-card">
+                        <span class="project-year">2026</span>
+                        <h3>Sistem Monitoring Otomasi Dome Pengering Kopi berbasis PLC &amp; IoT</h3>
+                        <p class="project-type">Project-Based Learning</p>
+                        <ul>
+                            <li>Memprogram PLC Omron CP2E-N sebagai pusat kendali pengering kopi UMKM, mengintegrasikan sensor suhu/kelembapan dengan aktuator blower, exhaust, dan dehumidifier secara real-time</li>
+                            <li>Merancang integrasi HMI dan IoT berbasis ESP32 untuk pemantauan cloud jarak jauh via RJ45/Ethernet, sehingga petani dapat memantau pengeringan secara online</li>
+                        </ul>
+                    </div>
+                    <div class="project-card">
+                        <span class="project-year">2026</span>
+                        <h3>Website IARC XII</h3>
+                        <p class="project-type">Kepanitiaan - IARC XII ITS</p>
+                        <p>Pengembangan website untuk kegiatan IARC XII ITS.</p>
+                    </div>
+                    <div class="project-card">
+                        <span class="project-year">2025</span>
+                        <h3>Sistem Kontrol Motor DC/AC berbasis Mikrokontroler &amp; VFD</h3>
+                        <p class="project-type">Project-Based Learning (Dasar Otomasi 3)</p>
+                        <p>Merancang sistem kontrol berbasis ATMega/ESP32 yang mengintegrasikan sensor, modul I/O, dan pengendalian motor DC &amp; AC melalui inverter/VFD.</p>
+                    </div>
+                    <div class="project-card">
+                        <span class="project-year">2025</span>
+                        <h3>Sistem Otomasi Studi Kasus Industri</h3>
+                        <p class="project-type">Project-Based Learning (Dasar Otomasi 2)</p>
+                        <p>Membuat power supply ±12V, virtual instrument, driver motor DC berbasis PWM, analisis karakteristik transistor, dan rangkaian zero-span menggunakan op-amp.</p>
+                    </div>
+                    <div class="project-card">
+                        <span class="project-year">2025</span>
+                        <h3>Backend Sistem Ticketing</h3>
+                        <p class="project-type">Voits Festival - ITS</p>
+                        <p>Mengembangkan backend website penjualan tiket dengan integrasi database untuk event skala kampus.</p>
+                    </div>
+                    <div class="project-card">
+                        <span class="project-year">2024</span>
+                        <h3>Dasar Otomasi 1</h3>
+                        <p class="project-type">Praktikum</p>
+                        <p>Merakit rangkaian otomasi dasar meliputi power supply, pembagi tegangan dan arus, counter &amp; adder berbasis seven segment, serta kontrol motor DC.</p>
+                    </div>
+                    <div class="project-card">
+                        <span class="project-year">2023</span>
+                        <h3>Sistem Pendeteksi Asap Real-Time berbasis Arduino</h3>
+                        <p class="project-type">Proyek Praktikum</p>
+                        <p>Alat deteksi gas berbahaya menggunakan sensor MQ-2 dengan alarm otomatis.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Keahlian</h2>
+                <div class="skill-group">
+                    <h3>Technical Skills</h3>
+                    <div class="tags">
+                        <span class="tag">PLC Programming (Omron CP2E-N)</span>
+                        <span class="tag">HMI</span>
+                        <span class="tag">Embedded Systems</span>
+                        <span class="tag">Arduino / ATMega / ESP32</span>
+                        <span class="tag">Basic Electronics</span>
+                        <span class="tag">PCB Design (KiCad)</span>
+                        <span class="tag">Kontrol Motor DC/AC</span>
+                        <span class="tag">VFD / Inverter</span>
+                        <span class="tag">IoT &amp; Cloud Monitoring</span>
+                        <span class="tag">Jaringan Komputer &amp; Troubleshooting</span>
+                        <span class="tag">Backend Web Development</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3>Sedang Dipelajari</h3>
+                    <div class="tags">
+                        <span class="tag learning">SCADA Systems</span>
+                        <span class="tag learning">Siemens / Schneider PLC Platform</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3>Soft Skills</h3>
+                    <div class="tags">
+                        <span class="tag">Komunikasi</span>
+                        <span class="tag">Kerja Tim</span>
+                        <span class="tag">Problem Solving</span>
+                        <span class="tag">Mentoring &amp; Asistensi</span>
+                        <span class="tag">Manajemen Waktu</span>
+                        <span class="tag">Kepemimpinan</span>
+                        <span class="tag">Adaptif terhadap Lingkungan Kerja Baru</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Sertifikasi</h2>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Sertifikasi Kompetensi Junior Web Developer (JWD)</div>
+                            <div class="experience-company">BNSP / Digital Talent Scholarship (DTS)</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Sertifikasi Kompetensi Keahlian Teknik Komputer dan Jaringan (TKJ)</div>
+                            <div class="experience-company">BNSP / LSP</div>
+                        </div>
+                        <div class="experience-date">2024</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Pengalaman Organisasi &amp; Kepanitiaan</h2>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Kepala Divisi Perlengkapan</div>
+                            <div class="experience-company">OKKBK DTEO ITS</div>
+                        </div>
+                        <div class="experience-date">Jul 2026 - Agu 2026</div>
+                    </div>
+                    <ul><li>Memimpin koordinasi penyediaan sarana, prasarana, dan logistik utama untuk mendukung kelancaran rangkaian kegiatan orientasi departemen</li></ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Staff Ahli Subdivisi IoT</div>
+                            <div class="experience-company">IARC XII - ITS</div>
+                        </div>
+                        <div class="experience-date">2026</div>
+                    </div>
+                    <ul>
+                        <li>Berkontribusi dalam pengembangan materi, riset teknis, dan pelaksanaan kegiatan yang berfokus pada sistem Internet of Things (IoT)</li>
+                        <li>Mengembangkan website IARC XII</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Staff Divisi Riset &amp; Kompetisi</div>
+                            <div class="experience-company">BSO Senergy - ITS</div>
+                        </div>
+                        <div class="experience-date">2025 - 2026</div>
+                    </div>
+                    <ul><li>Terlibat dalam kegiatan riset teknologi keenergian serta memfasilitasi persiapan kompetisi mahasiswa</li></ul>
+                </div>
+
                 <div class="experience-item">
                     <div class="experience-header">
                         <div>
                             <div class="experience-title">Staff Security And License</div>
                             <div class="experience-company">Vondasi 7.0 - ITS</div>
                         </div>
-                        <div class="experience-date">Oct 2025 - Nov 2025</div>
+                        <div class="experience-date">Okt 2025 - Nov 2025</div>
                     </div>
                     <ul>
                         <li>Mengurus perizinan kegiatan</li>
@@ -506,58 +490,55 @@
                             <div class="experience-title">Staff Perlengkapan dan Konsumsi</div>
                             <div class="experience-company">OKKBK DTEO ITS</div>
                         </div>
-                        <div class="experience-date">Jul 2025 - Aug 2025</div>
+                        <div class="experience-date">Jul 2025 - Agu 2025</div>
                     </div>
                     <ul>
                         <li>Bertanggung jawab atas penyediaan perlengkapan</li>
                         <li>Pengelolaan konsumsi acara agar kegiatan berjalan lancar dan tepat waktu</li>
                     </ul>
                 </div>
-            </section>
 
-            <section class="section">
-                <h2>Proyek</h2>
-                <div class="projects">
-                    <div class="project-card">
-                        <span class="project-year">2024</span>
-                        <h3>Dasar Otomasi 1</h3>
-                        <p>Mengembangkan dan merakit rangkaian otomasi dasar meliputi power supply, pembagi tegangan dan arus, counter & adder berbasis seven segment, serta kontrol motor DC sebagai implementasi konsep elektronika dan otomasi industri.</p>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Staff Divisi Perlengkapan</div>
+                            <div class="experience-company">IARC XI - ITS</div>
+                        </div>
+                        <div class="experience-date">2025</div>
                     </div>
-                    <div class="project-card">
-                        <span class="project-year">2025</span>
-                        <h3>Dasar Otomasi 2</h3>
-                        <p>Merancang dan mengimplementasikan sistem otomasi berbasis studi kasus meliputi power supply ±12V, virtual instrument, driver motor DC berbasis PWM, analisis karakteristik transistor, dan rangkaian zero-span menggunakan op-amp.</p>
+                    <ul><li>Menyiapkan dan mengelola kebutuhan logistik serta peralatan teknis selama berlangsungnya kompetisi dan kegiatan acara</li></ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Wakil Ketua</div>
+                            <div class="experience-company">Forum Study dan Kreatifitas Islam (FOSKI) - SMK</div>
+                        </div>
+                        <div class="experience-date">Periode 2022/2023</div>
                     </div>
-                    <div class="project-card">
-                        <span class="project-year">2025</span>
-                        <h3>Dasar Otomasi 3</h3>
-                        <p>Merancang dan mengimplementasikan sistem kontrol berbasis mikrokontroler (ATMega/ESP32) dengan metode kontrol terprogram, integrasi sensor, modul input/output, serta pengendalian plant motor DC dan motor AC menggunakan inverter/VFD beserta sistem sensing pendukung.</p>
-                    </div>
+                    <ul><li>Mendampingi Ketua memimpin organisasi keagamaan sekolah, mengoordinasikan program kerja harian dan kegiatan kreatif keislaman, serta membina anggota pengurus</li></ul>
                 </div>
             </section>
         </div>
 
         <footer>
-            <p>&copy; 2024 Syafiq Rahman Alif. All rights reserved.</p>
+            <p>&copy; 2026 Syafiq Rahman Alif. All rights reserved.</p>
             <p style="margin-top: 10px; opacity: 0.8;">Made with ❤️ for professional purposes</p>
         </footer>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Typing effect for subtitle
             const texts = [
                 "Institut Teknologi Sepuluh Nopember",
-                "Electrical Automation Engineer"
+                "Automation & Instrumentation"
             ];
-            let textIndex = 0;
-            let charIndex = 0;
-            let isDeleting = false;
+            let textIndex = 0, charIndex = 0, isDeleting = false;
             const typingElement = document.getElementById('typingText');
 
             function typeText() {
                 const currentText = texts[textIndex];
-                
                 if (isDeleting) {
                     typingElement.textContent = currentText.substring(0, charIndex - 1);
                     charIndex--;
@@ -565,111 +546,74 @@
                     typingElement.textContent = currentText.substring(0, charIndex + 1);
                     charIndex++;
                 }
-
                 let typeSpeed = isDeleting ? 50 : 100;
-
                 if (!isDeleting && charIndex === currentText.length) {
-                    typeSpeed = 2000;
-                    isDeleting = true;
+                    typeSpeed = 2000; isDeleting = true;
                 } else if (isDeleting && charIndex === 0) {
                     isDeleting = false;
                     textIndex = (textIndex + 1) % texts.length;
                     typeSpeed = 500;
                 }
-
                 setTimeout(typeText, typeSpeed);
             }
-
             setTimeout(typeText, 1000);
 
-            // Create floating particles
-            function createParticles() {
-                const particlesContainer = document.getElementById('particles');
+            (function createParticles() {
+                const c = document.getElementById('particles');
                 for (let i = 0; i < 15; i++) {
-                    const particle = document.createElement('div');
-                    particle.className = 'particle';
-                    particle.style.width = Math.random() * 60 + 20 + 'px';
-                    particle.style.height = particle.style.width;
-                    particle.style.left = Math.random() * 100 + '%';
-                    particle.style.top = Math.random() * 100 + '%';
-                    particle.style.animationDelay = Math.random() * 20 + 's';
-                    particle.style.animationDuration = Math.random() * 20 + 10 + 's';
-                    particlesContainer.appendChild(particle);
+                    const p = document.createElement('div');
+                    p.className = 'particle';
+                    p.style.width = Math.random() * 60 + 20 + 'px';
+                    p.style.height = p.style.width;
+                    p.style.left = Math.random() * 100 + '%';
+                    p.style.top = Math.random() * 100 + '%';
+                    p.style.animationDelay = Math.random() * 20 + 's';
+                    p.style.animationDuration = Math.random() * 20 + 10 + 's';
+                    c.appendChild(p);
                 }
-            }
-            createParticles();
+            })();
 
-            // Scroll progress bar
             window.addEventListener('scroll', () => {
                 const winScroll = document.documentElement.scrollTop;
                 const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                const scrolled = (winScroll / height) * 100;
-                document.getElementById('progressBar').style.width = scrolled + '%';
+                document.getElementById('progressBar').style.width = (winScroll / height) * 100 + '%';
             });
 
-            // Intersection Observer for sections
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
+            const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
 
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry, index) => {
                     if (entry.isIntersecting) {
-                        setTimeout(() => {
-                            entry.target.classList.add('visible');
-                        }, index * 100);
+                        setTimeout(() => entry.target.classList.add('visible'), index * 100);
                     }
                 });
             }, observerOptions);
+            document.querySelectorAll('.section').forEach(s => observer.observe(s));
 
-            document.querySelectorAll('.section').forEach(section => {
-                observer.observe(section);
-            });
-
-            // Observe experience items and project cards
             const itemObserver = new IntersectionObserver((entries) => {
                 entries.forEach((entry, index) => {
                     if (entry.isIntersecting) {
-                        setTimeout(() => {
-                            entry.target.classList.add('visible');
-                        }, index * 150);
+                        setTimeout(() => entry.target.classList.add('visible'), index * 150);
                     }
                 });
             }, observerOptions);
+            document.querySelectorAll('.experience-item, .project-card').forEach(i => itemObserver.observe(i));
 
-            document.querySelectorAll('.experience-item, .project-card').forEach(item => {
-                itemObserver.observe(item);
-            });
-
-            // Scroll to top button
             const scrollTopBtn = document.getElementById('scrollTop');
-            
             window.addEventListener('scroll', () => {
-                if (window.pageYOffset > 300) {
-                    scrollTopBtn.classList.add('visible');
-                } else {
-                    scrollTopBtn.classList.remove('visible');
-                }
+                scrollTopBtn.classList.toggle('visible', window.pageYOffset > 300);
             });
+            scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-            scrollTopBtn.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-
-            // Add parallax effect to header
             window.addEventListener('scroll', () => {
                 const scrolled = window.pageYOffset;
                 const header = document.querySelector('header');
                 if (header) {
                     header.style.transform = `translateY(${scrolled * 0.5}px)`;
-                    header.style.opacity = 1 - scrolled / 500;
+                    header.style.opacity = Math.max(0, 1 - scrolled / 500);
                 }
             });
         });
     </script>
 </body>
-</html>            
+</html>
